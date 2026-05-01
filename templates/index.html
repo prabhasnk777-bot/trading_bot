@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Trading Bot</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <main class="card">
+      <h1>Trading Bot</h1>
+      <form method="post">
+        <label>Symbol<input name="symbol" value="BTCUSDT" required></label>
+        <label>Side
+          <select name="side">
+            <option>BUY</option>
+            <option>SELL</option>
+          </select>
+        </label>
+        <label>Type
+          <select name="type">
+            <option>MARKET</option>
+            <option>LIMIT</option>
+          </select>
+        </label>
+        <label>Quantity<input name="quantity" type="number" step="any" value="0.001" required></label>
+        <label>Price (for LIMIT)<input name="price" type="number" step="any"></label>
+        <label class="checkbox"><input type="checkbox" name="mock"> Use mock client</label>
+        <div class="actions">
+          <button type="submit">Place Order</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

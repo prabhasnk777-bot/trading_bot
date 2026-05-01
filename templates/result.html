@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Order Result</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <main class="card">
+      <h1>Order Result</h1>
+      {% if error %}
+        <div class="error">Error: {{ error }}</div>
+      {% elif order %}
+        <div class="success">Order placed</div>
+        <ul>
+          <li>Order ID: {{ order.orderId or order.clientOrderId or 'N/A' }}</li>
+          <li>Status: {{ order.status }}</li>
+          <li>Executed Qty: {{ order.executedQty }}</li>
+          <li>Avg Price: {{ order.avgPrice }}</li>
+        </ul>
+      {% else %}
+        <div>No result.</div>
+      {% endif %}
+      <p><a href="/">Back</a></p>
+    </main>
+  </body>
+</html>
